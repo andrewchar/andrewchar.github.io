@@ -1,0 +1,430 @@
+/*------------------------*/
+/* GLOBAL STYLES */
+/*------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Dosis", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 18px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+h3 {
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  color: #777;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+section {
+  margin: 150px 0;
+  @media (max-width: 600px) {
+    margin: 75px 0;
+  }
+}
+
+.sub-head {
+  text-align: center;
+  &.mb-75 {
+    margin-bottom: 75px;
+    &.mb-35 {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.full-height-width {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  @media (max-width: 1050px) {
+    padding: 0 15px;
+  }
+}
+
+.page-separator {
+  border-top: 1px solid rgb(217, 217, 217);
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.nav {
+  transition: all 2s;
+}
+.hidden-nav {
+  opacity: 0;
+}
+/* STICKY NAV */
+.stuck {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 5px #000;
+  opacity: 1;
+}
+
+/* offset trick to avoid hashtag links to end up behind fixed nav bar */
+.offset:before {
+  display: block;
+  content: " ";
+  height: 104px; /* height of the navbar X 2 */
+  margin-top: -52px;
+  visibility: hidden;
+}
+
+/*------------------------*/
+/* HERO SECTION */
+/*------------------------*/
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/bg-hero-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  margin-top: 0;
+  @media (max-width: 568px) {
+    background-attachment: scroll; /* IOS fix to display background */
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 20px 0;
+    list-style: none;
+    font-size: 11px;
+    @media (max-width: 568px) {
+      justify-content: space-around;
+    }
+    li {
+      text-transform: uppercase;
+      padding-right: 25px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.8);
+      @media (max-width: 568px) {
+        padding-right: 0;
+      }
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        padding-bottom: 8px;
+        border-bottom: 1px solid transparent;
+        &:hover {
+          border-bottom: 1px solid #f44336;
+        }
+      }
+    }
+  }
+  .hero-text {
+    height: 100%;
+    display: flex;
+    text-align: center;
+    margin-top: -25px;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: 35px;
+      color: #fff;
+      @media (max-width: 1000px) {
+        letter-spacing: 30px;
+      }
+      @media (max-width: 900px) {
+        letter-spacing: 25px;
+      }
+      @media (max-width: 805px) {
+        font-size: 30px;
+        letter-spacing: 20px;
+      }
+      @media (max-width: 670px) {
+        font-size: 25px;
+        letter-spacing: 15px;
+      }
+      @media (max-width: 500px) {
+        font-size: 22px;
+        letter-spacing: 10px;
+      }
+    }
+    p {
+      letter-spacing: 6px;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.8);
+      @media (max-width: 645px) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+/*------------------------*/
+/* ABOUT ME SECTION */
+/*------------------------*/
+.about {
+  .about-content {
+    text-align: center;
+  }
+  img {
+    border-radius: 50%;
+    margin: 24px 0 14px;
+    width: 200px;
+  }
+}
+
+/*------------------------*/
+/* PORTFOLIO SECTION */
+/*------------------------*/
+.portfolio {
+  .portfolio-showcase__image {
+    width: 60%;
+    float: left;
+    @media (max-width: 1023px) {
+      width: 100%;
+      float: none;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .portfolio-showcase__description {
+    float: right;
+    width: 38%;
+    @media (max-width: 1023px) {
+      width: 100%;
+      float: none;
+    }
+    ul {
+      display: inline-flex;
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      li {
+        padding: 3px 6px;
+        background-color: #1cbbb4;
+        border-radius: 2px;
+        font-size: 10px;
+        color: #fff;
+        text-transform: uppercase;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+          0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        & + li {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  .portfolio-showcase__separator {
+    margin: 75px auto;
+    width: 50%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgb(217, 217, 217),
+      rgba(0, 0, 0, 0)
+    );
+    @media (max-width: 480px) {
+      margin: 40px auto;
+      width: 80%;
+    }
+  }
+  .fa-tags {
+    vertical-align: middle;
+  }
+  .web-apps {
+    margin: 75px 0;
+  }
+}
+/* web apps portion of portfolio */
+.web-apps__showcase {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  li {
+    width: 50%;
+    float: left;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    @media (max-width: 700px) {
+      width: 100%;
+      float: none;
+    }
+    &:hover {
+      .caption {
+        opacity: 1;
+        z-index: 1;
+      }
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+  img {
+    width: 100%;
+    vertical-align: top;
+    transition: all 0.9s cubic-bezier(0.05, 0.2, 0.1, 1);
+  }
+  .caption {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .blur {
+    /* adds black overlay on hover when image is hovered. Effect is triggers by opacity: 1 on the li  */
+    position: absolute;
+    &.green {
+      background-color: rgba(0, 166, 81, 0.9);
+    }
+    &.yellow {
+      background-color: rgba(61, 71, 97, 0.6);
+    }
+    &.gray {
+      background-color: rgba(255, 95, 53, 0.8);
+    }
+    &.red {
+      background-color: rgba(248, 93, 97, 0.6);
+    }
+    &.black {
+      background-color: rgba(28, 21, 17, 0.6);
+    }
+    &.brown {
+      background-color: rgba(126, 113, 78, 0.6);
+    }
+    &.blue {
+      background-color: rgba(140, 184, 255, 0.8);
+    }
+    &.dark-blue {
+      background-color: rgba(14, 63, 142, 0.8);
+    }
+    &.purple {
+      background-color: rgba(129, 25, 226, 0.8);
+    }
+  }
+  .caption-text {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    p {
+      padding: 0 30px;
+      color: #fff;
+      @media (max-width: 480px) {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+    h2 {
+      color: #fff;
+    }
+  }
+}
+/*------------------------*/
+/* CONTACT SECTION */
+/*------------------------*/
+.contact {
+  width: 100%;
+  // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/wood.jpeg");
+  // background-position: center;
+  // background-size: cover;
+  // background-attachment: fixed;
+  background-color: #252525;
+  color: #fff;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .contact__content {
+    padding: 50px 0;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  p {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .button {
+    width: 140px;
+    padding: 10px 0;
+    margin: 0 auto;
+    border-radius: 3px;
+    text-align: center;
+    background-color: #1cbbb4;
+    a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+}
+/*------------------------*/
+/* FOOTER SECTION */
+/*------------------------*/
+footer {
+  background-color: #252525;
+  padding: 20px 0 30px 0;
+  .footer__social {
+    display: flex;
+    justify-content: center;
+    background-color: #252525;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    li + li {
+      margin-left: 30px;
+    }
+  }
+  i {
+    color: #777;
+    transition: all 0.3s;
+    &.fa-linkedin:hover {
+      color: #007bb6;
+    }
+    &.fa-twitter:hover {
+      color: #00b6f1;
+    }
+  }
+  .copy-right {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 10px;
+  }
+}

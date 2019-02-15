@@ -18,11 +18,14 @@
   "homepage": "https://github.com/andrewchar/portfolio-V3#readme",
   "devDependencies": {
     "autoprefixer": "^6.7.7",
-    "browser-sync": "^2.18.8",
+    "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.0.0",
     "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.4.0",
     "postcss-scss": "^0.4.1",
-    "precss": "^1.4.0"
+    "precss": "^1.4.0",
+    "prettier": "^1.16.4"
   },
   "dependencies": {}
 }

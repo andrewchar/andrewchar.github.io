@@ -1,20 +1,21 @@
 var waypoint = new Waypoint({
-  element: document.getElementById('about'),
+  element: document.getElementById("about"),
   handler: function(direction) {
-    var nav = document.getElementById('nav');
+    var nav = document.getElementById("nav");
     if (direction == "down") {
-      nav.classList.add('stuck');
+      nav.classList.add("stuck");
     } else {
-      nav.classList.remove('stuck');
+      nav.classList.remove("stuck");
     }
   },
   offset: 150
-})
+});
 
 function debounce(func, wait = 10, immediate = true) {
   var timeout;
   return function() {
-    var context = this, args = arguments;
+    var context = this,
+      args = arguments;
     var later = function() {
       timeout = null;
       if (!immediate) func.apply(context, args);
@@ -27,12 +28,12 @@ function debounce(func, wait = 10, immediate = true) {
 }
 
 function stickyNav() {
-  var nav = document.getElementById('nav');
+  var nav = document.getElementById("nav");
   var intViewportHeight = window.innerHeight;
-  if (window.scrollY > 60 && (window.scrollY < intViewportHeight - 52)) {
-    nav.classList.add('hidden-nav');
+  if (window.scrollY > 60 && window.scrollY < intViewportHeight - 52) {
+    nav.classList.add("hidden-nav");
   } else {
-    nav.classList.remove('hidden-nav');
+    nav.classList.remove("hidden-nav");
   }
 }
 
